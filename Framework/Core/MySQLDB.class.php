@@ -8,7 +8,11 @@ class MySQLDB {
 	private $charset;	//字符编码
 	private $dbname;	//链接的数据库
 	private $dbLink;	//数据库连接对象
-
+        
+        
+        public function __get($name) {
+            return $this->$name;
+        }
 
 	private static $instance;
 

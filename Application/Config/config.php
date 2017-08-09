@@ -11,9 +11,10 @@ return array(
     ),
     //应用程序的配置信息
     'app'=>array(
-        'default_platform' =>  'Admin',
-        'default_controller' => 'Student',
-        'default_action' => 'list'
+        'default_platform'      =>  'Admin',
+        'default_controller'    => 'Student',
+        'default_action'        => 'list',
+        'key'                   => 'joe'
     )
 );
 

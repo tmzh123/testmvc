@@ -3,11 +3,25 @@
 class BaseController{
     public function __construct() {
         $this->initSession();
+        $this->checkLogin();
     }
     
     private function initSession(){
         new SessionLib();
         session_start();
+    }
+    
+    /**
+     * 判断用户是否登录
+     */
+    private function checkLogin(){    
+        if(strtolower(CONTROLLER_NAME) == 'login'){
+            return;
+        }
+        if(empty($_SESSION['admin'])){
+            header('location:index.php?p=Admin&c=Login&a=login');
+            exit;
+        }
     }
     
     /**
