@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>列表页</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>编号</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>操作</th>
+		</tr>
+		<?php foreach($result as $row) :?>
+		<tr>
+			<td><?php echo $row['id'] ?></td>
+			<td><?php echo $row['name'] ?></td>
+			<td><?php echo $row['age'] ?></td>
+			<td><button type="button" onclick="if(confirm('确定删除吗?')){ location.href='index.php?p=Admin&c=Student&a=del&id=<?php echo $row['id'] ?>' }">删除</button></td>
+		</tr>
+		<?php endforeach; ?>
+
+	</table>
+</body>
+</html>
