@@ -15,6 +15,12 @@ class LoginController extends BaseController {
         if(!empty($_POST)){
             $username = $_POST['username'];
             $password = $_POST['password'];
+            $code = $_POST['captcha'];
+            $captcha = new CaptchaLib();
+            if(!$captcha->checkCode($code)){
+                $this->error('index.php?p=Admin&c=Login&a=login','验证码错误');
+                exit;
+            }
             $info = $adminModel->checkLogin($username, $password);
             if($info){
                 if(isset($_POST['remember']) && $_POST['remember'] == 1){
@@ -55,4 +61,14 @@ class LoginController extends BaseController {
         session_destroy();
         $this->success('index.php?p=Admin&c=Login&a=login');
     }
+    
+    /**
+     * 生成验证码
+     */
+    public function captchaAction(){
+        $captcha = new CaptchaLib();
+        $captcha->generateCaptcha();
+    }
+            
+    
 }
