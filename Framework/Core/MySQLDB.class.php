@@ -49,10 +49,11 @@ class MySQLDB {
 	* 执行SQL语句
 	*/
 	public function query($sql){
-		if(!$result = mysqli_query($this->dbLink,$sql)){
+                $result = mysqli_query($this->dbLink,$sql);     
+		if(!$result){
 			echo 'SQL语句执行失败<br>';
-			echo '错误编号:'.mysqli_errno.'<br>';
-			echo '错误信息:'.mysqli_error.'<br>';
+			echo '错误编号:'.mysqli_errno($this->dbLink).'<br>';
+			echo '错误信息:'.mysqli_error($this->dbLink).'<br>';
 			echo '错误的SQL语句:['.$sql.']<br>';
 			exit;
 		}
