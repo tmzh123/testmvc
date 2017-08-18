@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/test/session.php</file>
             <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Model/AdminModel.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Config/config.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/top.html</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Controller/Admin/AdminController.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/BaseController.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/test/diguiCategory.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/index.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/MySQLDB.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/menu.html</file>
             <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/BaseModel.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/login.html</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/test/session2.php</file>
             <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Controller/Admin/LoginController.class.php</file>
         </group>
     </open-files>
