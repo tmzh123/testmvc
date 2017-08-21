@@ -14,7 +14,12 @@ return array(
         'default_platform'      =>  'Admin',
         'default_controller'    => 'Student',
         'default_action'        => 'list',
-        'key'                   => 'joe'
+        'key'                   => 'joe',
+        
+        'upload_path'   =>  './Public/uploads/',
+        'upload_type'   =>  array('image/jpeg','image/png','image/gif'),
+        'upload_size'   =>  10000000,
+        'app_debug'     =>  false    //true表示开发模式，false表示运行模式
     )
 );
 

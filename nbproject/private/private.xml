@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Model/AdminModel.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/MySQLDB.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/menu.html</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/BaseModel.class.php</file>
-            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Controller/Admin/LoginController.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/admin.html</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Config/config.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/list.html</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Controller/Admin/AdminController.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Lib/ImageLib.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Lib/UploadLib.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/View/Admin/add.html</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Public/Admin/Assets/css/font-awesome.min.css</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Framework/Core/Framework.class.php</file>
+            <file>file:/E:/Work/Wwwroot/php/testmvc/Application/Controller/Admin/StudentController.class.php</file>
         </group>
     </open-files>
 </project-private>
