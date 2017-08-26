@@ -14,6 +14,7 @@ class Framework{
     public static function run(){
         self::initConst();
         self::initConfig();
+        self::initError();
         self::initRoute();
         self::registerAutoLoad();
         self::initDispatch();
@@ -40,6 +41,8 @@ class Framework{
         define('LIB_PATH',FRAMEWORK_PATH.'Lib'.DS);  //Lib 目录
 
         define('PUBLIC_PATH',ROOT_PATH.'Public'.DS);    //Public 目录
+        
+        define('LOG_PATH',APP_PATH.'logs'.DS);      //日志目录
 
     }
 
@@ -54,6 +57,7 @@ class Framework{
      *  定制路由
      * */
     private static function initRoute(){
+        echo $aa;
         //当前平台名
         $p = isset($_REQUEST['p']) ? $_REQUEST['p'] : $GLOBALS['config']['app']['default_platform'];
         //当前控制器名
@@ -113,4 +117,51 @@ class Framework{
         $controller = new $controllerName();
         $controller->$actionName();
     }
+    
+    /**
+     * 初始化错误机制
+     */
+    private static function initError(){
+        ini_set('error_reporting', E_ALL);  //默认显示所有错误
+        if($GLOBALS['config']['app']['app_debug']){
+            //开发模式
+            ini_set('display_errors', 'on');    //在浏览器上显示错误
+            ini_set('log_errors', 'off');       //关闭错误日志功能
+        }else{
+            //运行模式
+            ini_set('display_errors', 'off');    //关闭浏览器上错误
+            ini_set('log_errors', 'on');         //开启错误日志功能
+            ini_set('error_log', LOG_PATH.'error.log'); //日志地址
+        }
+    }
+    
+    /**
+     * 自定义错误
+     * @param type $level
+     * @param type $msg
+     * @param type $file
+     * @param type $line
+     * @return boolean
+     */
+    function customerError($level,$msg,$file,$line){
+	switch ($level) {
+		case E_NOTICE:
+		case E_USER_NOTICE:
+			echo '将错误屏蔽掉<br>';
+			break;
+		case E_WARNING:
+		case E_USER_WARNING:
+			echo '发个邮件给管理员<br>';
+			break;
+		case E_ERROR:
+		case E_USER_ERROR:
+			echo '给管理员发信息<br>';
+			break;
+	}
+	echo '文件错误信息:'.$msg.'<br>';
+	echo '错误的文件名:'.$file.'<br>';
+	echo '错误的行号:'.$line.'<hr>';
+	return false;	//在自定义错误完成之后,在交给php处理
+    }
+    
 }

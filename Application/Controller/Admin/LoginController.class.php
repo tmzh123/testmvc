@@ -10,7 +10,7 @@ class LoginController extends BaseController {
     
     
     public function loginAction(){
-        $adminModel = new AdminModel();
+        $adminModel = new AdminModel();        
         //正常登录
         if(!empty($_POST)){
             $username = $_POST['username'];

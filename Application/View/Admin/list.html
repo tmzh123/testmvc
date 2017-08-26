@@ -16,6 +16,7 @@
 			<td><?php echo $row['id'] ?></td>
 			<td><?php echo $row['name'] ?></td>
 			<td><?php echo $row['age'] ?></td>
+                        <td><img src="/Public/uploads/<?php echo $row['user_photo'] ?>" width="50" height="50" /></td>
 			<td><button type="button" onclick="if(confirm('确定删除吗?')){ location.href='index.php?p=Admin&c=Student&a=del&id=<?php echo $row['id'] ?>' }">删除</button></td>
 		</tr>
 		<?php endforeach; ?>
