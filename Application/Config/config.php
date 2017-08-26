@@ -19,7 +19,7 @@ return array(
         'upload_path'   =>  './Public/uploads/',
         'upload_type'   =>  array('image/jpeg','image/png','image/gif'),
         'upload_size'   =>  10000000,
-        'app_debug'     =>  false    //true表示开发模式，false表示运行模式
+        'app_debug'     =>  true    //true表示开发模式，false表示运行模式
     )
 );
 

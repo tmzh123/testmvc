@@ -13,7 +13,7 @@ class BaseController{
         $smarty -> setTemplateDir(__VIEW__);
         $smarty -> setCompileDir(__VIEWC__);
         $smarty -> setCacheDir(CACHE_SMARTY_PATH);
-        $smarty -> setCaching(1);
+        //$smarty -> setCaching(1);
         
         $this->smarty = $smarty;
     }

@@ -57,7 +57,6 @@ class Framework{
      *  定制路由
      * */
     private static function initRoute(){
-        echo $aa;
         //当前平台名
         $p = isset($_REQUEST['p']) ? $_REQUEST['p'] : $GLOBALS['config']['app']['default_platform'];
         //当前控制器名

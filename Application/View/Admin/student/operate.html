@@ -1,0 +1,67 @@
+{extends file="../layout.html"}
+
+{block name="pagebody"}
+<div id="mainPage">
+    <div class="well bordered-top bordered-purple popover-container">
+        
+        <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    
+                    <form id="stuForm" enctype="multipart/form-data" method="post" action="index.php?p=Admin&c=Student&a=operate">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="m_name">姓名：</label>
+                                            <span class="input-icon">
+                                                <input type="hidden" name="id" id="m_id" value="{$stu['id']}">
+                                                <input type="text" class="form-control" name="name" id="m_name" value="{$stu['name']}" placeholder="姓名">
+                                                <i class="fa fa-asterisk red"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="m_age">年龄：</label>
+                                            <span class="input-icon">
+                                                <input type="number" class="form-control" name="age" id="m_age" value="{$stu['age']}"  placeholder="年龄">
+                                                <i class="fa fa-asterisk red"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="m_image">图像：</label>
+                                            <span class="input-icon">
+                                                <input type="file" class="form-control" name="image" id="m_image">
+                                                <i class="fa fa-asterisk red"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <hr class="wide">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group" style="text-align: center;">
+                                            <button type="submit">保存</button>
+                                            <button type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+{/block}

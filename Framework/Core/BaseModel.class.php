@@ -111,6 +111,16 @@ class BaseModel{
         return $this->db->fetchAll($sql);
     }
     
+    /**
+     * 获取单条记录
+     * @param int $pk_value 主键值
+     * @return type array
+     */
+    public function single($pk_value){
+        $sql = "select * from `{$this->getTableName()}` where `{$this->getPk()}`='{$pk_value}'";
+        return $this->db->fetchRow($sql);
+    }
+    
 }
 
  ?>

@@ -4,6 +4,7 @@ class StudentModel extends BaseModel{
 	private $id;
 	private $name;
 	private $age;
+        private $image;
 
 	public function __get($key){
 		return $this->$key;

@@ -74,7 +74,7 @@ class UploadLib{
         $foldername=date('Y-m-d');   //文件夹名称
         $folderpath=$this->path.DS.$foldername;    //文件夹路径
         if(!file_exists($folderpath)){
-            mkdir($folderpath);
+            mkdir($folderpath,777,true);
         }
         //文件上传
         $filename=uniqid('',true).strrchr($file['name'],'.');   //文件名称

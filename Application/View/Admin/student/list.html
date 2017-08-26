@@ -1,0 +1,76 @@
+{extends file="../layout.html"}
+
+{block name="pagebody"}
+<div id="mainPage">
+    <div class="well bordered-top bordered-purple popover-container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <form class="form-inline search-form" id="searchFrom" role="form">
+                    <div class="row     margin-bottom-5">
+                        <div class="col-lg-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                <label for="c_name">名称</label>
+                                <input type="text" class="form-control" id="c_name" name="name" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-xs-6">
+
+                            <a href="javascript:void(0);" id="btn-search" class="btn btn-purple btn-xs"><i class="glyphicon glyphicon-search"></i>查询</a>
+                            <a href="javascript:void(0);" id="btn-reset" class="btn btn-purple btn-xs"><i class="fa fa-refresh"></i>重置</a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+            
+        <hr class="wide">
+        
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="btn-group">
+                    <a href="index.php?p=Admin&c=Student&a=operate" id="btn-add" class="btn btn-purple btn-xs"><i class="fa fa-plus"></i>新增</a>
+                    <a href="index.php?p=Admin&c=Student&a=remove" id="btn-remove" class="btn btn-purple btn-xs"><i class="glyphicon glyphicon-trash"></i>删除</a>
+<!--                    <a href="index.php?p=Admin&c=Student&a=operate" id="btn-edit" class="btn btn-purple btn-xs"><i class="fa fa-edit"></i>修改</a>-->
+                </div>
+            </div>
+        </div>
+        
+        <hr class="wide">
+        
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>操作</th>
+            </tr>
+            {foreach $stuList as $stu}
+            <tr>
+                <td>{$stu['id']}</td>
+                <td>{$stu['name']}</td>
+                <td>{$stu['age']}</td>
+                <td><image src="/Public/uploads/{$stu['user_photo']}" width="50" height="50" /></td>
+                <td><button type="button" onclick="delClick('{$stu['id']}')">删除</button></td>
+                <td><button type="button" onclick="location.href='index.php?p=Admin&c=Student&a=operate&id={$stu['id']}'">修改</button></td>
+            </tr>
+            {/foreach}
+
+	</table>
+    </div>
+</div>
+
+<div id="operatePage" style="display: none;"></div>
+
+{/block}
+
+{block name="js"}
+<script>
+    function delClick(id){
+        if(confirm('确定删除吗?')){ 
+            location.href="index.php?p=Admin&c=Student&a=del&id=" + id;
+        }
+    }
+</script>
+{/block}
