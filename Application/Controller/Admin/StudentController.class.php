@@ -20,12 +20,16 @@ class StudentController extends BaseController {
 	public function addAction(){
 		echo '添加';
                 echo '<br>';
-                echo $_SESSION['name'];
+                $this-> smarty-> assign('name','王五');
+                $this->smarty->display(__VIEW__.'add.html');
 	}
 
 	//修改
 	public function modifyAction(){
 		echo '修改';
+                echo '<br>';
+                $this-> smarty-> assign('name','不晓得写什么');
+                $this->smarty->display(__VIEW__.'modify.html');
 	}
 
 	//删除
@@ -47,6 +51,7 @@ class StudentController extends BaseController {
             $_SESSION['name'] = '赵六';
             echo $_SESSION['name'];
         }
-
+        
+        
 }
  ?>

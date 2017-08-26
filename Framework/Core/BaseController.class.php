@@ -1,9 +1,31 @@
 <?php
 
 class BaseController{
+    public $smarty;
     public function __construct() {
+        $this->initSmarty();
         $this->initSession();
         $this->checkLogin();
+    }
+    
+    private function initSmarty(){
+        $smarty = new Smarty();
+        $smarty -> setTemplateDir(__VIEW__);
+        $smarty -> setCompileDir(__VIEWC__);
+        $smarty -> setCacheDir(CACHE_SMARTY_PATH);
+        $smarty -> setCaching(1);
+        
+        $this->smarty = $smarty;
+    }
+    
+    /**
+     * 清除缓存页面
+     * @param type $name
+     */
+    public function clearCacheAction(){
+        $name = $_GET['tname'];
+        $cacheName = __VIEW__.$name.'.html';
+        echo $this-> smarty -> clearCache($cacheName);
     }
     
     private function initSession(){

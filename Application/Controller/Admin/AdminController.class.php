@@ -9,6 +9,7 @@
 class AdminController extends BaseController{
     
     public function adminAction(){
+        echo 'admin';
         require __VIEW__.'admin.html';
     }
     

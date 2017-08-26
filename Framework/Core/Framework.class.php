@@ -29,7 +29,11 @@ class Framework{
         define('CONFIG_PATH',APP_PATH.'Config'.DS);     //Config 目录
         define('MODEL_PATH',APP_PATH.'Model'.DS);  //Model 目录
         define('CONTROLLER_PATH',APP_PATH.'Controller'.DS);  //Controller 目录
-        define('VIEW_PATH',APP_PATH.'View'.DS);  //View 目录
+        define('VIEW_PATH',APP_PATH.'View'.DS);  //View 模版目录
+        
+        define('VIEWC_PATH',APP_PATH.'View_c'.DS);  //View 混编目录
+        
+        define('CACHE_SMARTY_PATH', APP_PATH.'cache'.DS);   //Smarty缓存文件
 
         define('FRAMEWORK_PATH',ROOT_PATH.'Framework'.DS);  //Framework 目录
         define('CORE_PATH',FRAMEWORK_PATH.'Core'.DS);  //Core 目录
@@ -63,8 +67,10 @@ class Framework{
 
         //当前控制器的目录
         define('__URL__',CONTROLLER_PATH.PLATFORM_NAME.DS);
-        //当前视图的目录
+        //当前视图模版的目录
         define('__VIEW__',VIEW_PATH.PLATFORM_NAME.DS);
+        //当前视图混编页面的目录
+        define('__VIEWC__',VIEWC_PATH.PLATFORM_NAME.DS);
     }
 
     /*
@@ -75,6 +81,7 @@ class Framework{
             'MySQLDB' => CORE_PATH.'MySQLDB.class.php',
             'BaseModel' => CORE_PATH.'BaseModel.class.php',
             'BaseController' => CORE_PATH.'BaseController.class.php',
+            'Smarty' => LIB_PATH.'smarty/Smarty.class.php',
         );
         if(isset($class_map[$class_name])){
             require $class_map[$class_name];
